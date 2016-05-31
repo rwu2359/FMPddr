@@ -1,5 +1,5 @@
--- v1.1 copes will three cases of FMPerception being closed, having no windows open, and just needs refresh
--- v1.2 added wait when FMPerception is initally closed to allow windows to redraw
+-- v1.1 copes will manage three states of FMPerception. Being closed, having no windows open, and just needs refresh
+-- v1.2 added wait when initially closed to allow windows to redraw
 
 tell application "System Events"
 	tell process "FileMaker Pro Advanced"
