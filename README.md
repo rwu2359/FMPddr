@@ -25,7 +25,7 @@ This will output an XML DDR from all current files from FileMaker with all secti
 
 Similarly, FMPerception will import the Summary.xml from the directory that was last used. If you need to point somewhere else, then do that manually first.
 
-You can then run the file directly from the Script Editor, be selecting the Service you created from inside FileMaker, or any other method of your choosing.
+You can then run the file directly from the Script Editor, by selecting the Service you created from inside FileMaker, the shortcut you assigned to it, or any other method of your choosing.
 
 ####version history
     1.2 16_05_31, minor timing tweaks
