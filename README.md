@@ -17,6 +17,7 @@ Ensure you have a file open in FileMaker, and run to test
 
 ####version history
 1.2 16_05_31, minor timing tweaks
+
 1.1 16_05_30, initial release
 
 ###acknowledgements
