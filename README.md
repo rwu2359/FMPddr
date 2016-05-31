@@ -20,9 +20,19 @@ Once the action is saved, you can add a keyboard shortcut from system preference
 ##Testing
 You can run the code from the Script Editor. Because the refresh is silent, you can see the result (boolean) of whether the refresh command was issued in the Result window.
 
+##Running
+This will output all files from FileMaker with all sections included to the last place you saved a DDR. If you need this to be a new location so you dont mangle an existing one, do it manually first.
+
+Similarly, FMPerception will import the Summary.xml from the directory that was last used. If you need to point somewhere else, then do that manually first.
+
+You can then run the file directly from the Script Editor, be selecting the Service you created from inside FileMaker, or any other method of your choosing.
+
 ####version history
     1.2 16_05_31, minor timing tweaks
     1.1 16_05_30, initial release
 
-###acknowledgements
+####acknowledgements
 initial improvements incorporated from Todd Geist, https://www.geistinteractive.com/#gi-products-home
+
+####small print
+Its Automator, it does things to your system. Automatically. It works here (my office), but you will test it on your machine first won't you?
