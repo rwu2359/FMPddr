@@ -1,0 +1,108 @@
+-- v1.1 copes will three cases of FMPerception being closed, having no windows open, and just needs refresh
+-- v1.2 added wait when FMPerception is initally closed to allow windows to redraw
+
+tell application "System Events"
+	tell process "FileMaker Pro Advanced"
+		--export the DDR as XML, not automatically opened
+		--saves to last location with all files selected
+		set frontmost to true
+		try
+			click menu item "Database Design Report..." of menu "Tools" of menu bar item 10 of menu bar 1
+		on error
+			try
+				--  this will work if script workspace is in front
+				click menu item "Database Design Report..." of menu "Tools" of menu bar item 7 of menu bar 1
+			on error
+				--  this will work if the DB is layout mode is in front
+				click menu item "Database Design Report..." of menu "Tools" of menu bar item 11 of menu bar 1
+			end try
+		end try
+		
+		--select XML as format
+		click checkbox 3 of window "Database Design Report"
+		set theCheckbox to checkbox "Automatically open report when done" of window "Database Design Report"
+		tell theCheckbox
+			set checkboxStatus to value of theCheckbox as boolean
+			--turn off auto-open
+			if checkboxStatus is true then click theCheckbox
+		end tell
+		--Create
+		click button 1 of window "Database Design Report"
+		delay 0.1
+		--Save
+		click button 1 of window "Save Report"
+		try
+			delay 0.5
+			--Save All
+			click button 2 of window "FileMaker Pro"
+			
+			repeat until not window "FileMaker Pro" exists
+				--delay 0.5
+			end repeat
+			
+		on error
+			--first time save, not there so move on
+		end try
+	end tell
+	set refreshed to false
+	try
+		tell process "FMPerception"
+			set frontmost to true
+			try
+				set this_window to name of window 1
+				--exits if there is no window open
+				--File:Refresh
+				click menu item 5 of menu 1 of menu bar item 3 of menu bar 1
+				set refreshed to true
+			on error
+				--
+			end try
+		end tell
+	on error
+		--if not yet open at all
+		tell application "FMPerception"
+			activate
+		end tell
+		delay 0.4
+		tell process "FMPerception"
+			set frontmost to true
+			--temp code if not yet registered to get rid of dialog box
+			set window_name to name of window 1
+			if window_name = "FMPerception Registration" then
+				--close window button
+				click button 3 of window 1
+				delay 0.2
+			end if
+			--end temp code if not yet registered to get rid of dialog box
+		end tell
+	end try
+	if not refreshed then
+		try
+			tell process "FMPerception"
+				--File:New DDR Browser
+				click menu item 1 of menu 1 of menu bar item 3 of menu bar 1
+				repeat until window "Untitled" exists
+					-- added 1.2
+					--delay 0.5
+				end repeat
+				delay 0.2
+				--loop over file list till we get to Summary.xml
+				set y to 1
+				repeat with this_row in row of outline 1 of scroll area 1 of splitter group 1 of splitter group 1 of group 1 of sheet 1 of window 1
+					if y = 1 then
+						--skip because row 1 is the header and not values
+						set y to 0
+					else if value of text field 1 of UI element 1 of this_row = "Summary.xml" then
+						select this_row
+						--
+						click button 1 of sheet 1 of window 1
+						exit repeat
+					end if
+				end repeat
+				set frontmost to true
+			end tell
+		end try
+	end if
+end tell
+--optional return if windows was refreshed or opened for first time
+refreshed
