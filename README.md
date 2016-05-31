@@ -25,4 +25,4 @@ You can run the code from the Script Editor. Because the refresh is silent, you 
     1.1 16_05_30, initial release
 
 ###acknowledgements
-improvements incorporated from Todd Geist, 
+improvements incorporated from Todd Geist, https://www.geistinteractive.com/#gi-products-home
