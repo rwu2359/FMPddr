@@ -21,7 +21,7 @@ Once the action is saved, you can add a keyboard shortcut from system preference
 You can run the code from the Script Editor. Because the refresh is silent, you can see the result (boolean) of whether the refresh command was issued in the Result window.
 
 ##Running
-This will output all files from FileMaker with all sections included to the last place you saved a DDR. If you need this to be a new location so you dont mangle an existing one, do it manually first.
+This will output an XML DDR from all current files from FileMaker with all sections included - to the last place you saved a DDR. If you need this to be a new location so you don't mangle an existing one, do that manually first.
 
 Similarly, FMPerception will import the Summary.xml from the directory that was last used. If you need to point somewhere else, then do that manually first.
 
