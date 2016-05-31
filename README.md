@@ -2,8 +2,8 @@
 AppleScript to automate FileMaker DDR into FMPerception
 
 ##Required
-    Mac only,
-    FileMaker Pro Advanced,
+    Mac only
+    FileMaker Pro Advanced
     FMPerception
 
 ##Installation
