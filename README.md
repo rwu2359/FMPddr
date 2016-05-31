@@ -11,7 +11,7 @@ Create a new Automator Service action, with no input, pointing to FileMaker Pro 
 
 Select Applescript from the available actions
 
-Copy and paste the code from ths scpt file
+Copy and paste the code from this scpt file
 
 Ensure you have a file open in FileMaker, and run to test
 
