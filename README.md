@@ -34,5 +34,5 @@ You can then run the file directly from the Script Editor, be selecting the Serv
 ####acknowledgements
 initial improvements incorporated from Todd Geist, https://www.geistinteractive.com/#gi-products-home
 
-####small print
+#####small print
 Its Automator, it does things to your system. Automatically. It works here (my office), but you will test it on your machine first won't you?
