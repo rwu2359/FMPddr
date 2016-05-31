@@ -15,8 +15,8 @@ Copy and paste the code from ths scpt file
 
 Ensure you have a file open in FileMaker, and run to test
 
-###version
+####version
 1.2 16_05_31
 
-##acknowledgements
+###acknowledgements
 improvements incorporated from Todd Geist, 
