@@ -37,7 +37,8 @@ tell application "System Events"
 			click button 2 of window "FileMaker Pro"
 			
 			repeat until not window "FileMaker Pro" exists
-				--delay 0.5
+				#  you need this is if the export is from slow remote files, otherwise comment out
+				delay 0.5
 			end repeat
 			
 		on error
