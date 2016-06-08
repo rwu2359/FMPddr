@@ -1,5 +1,6 @@
 # v1.1 copes will manage three states of FMPerception. Being closed, having no windows open, and just needs refresh
 # v1.2 added wait when initially closed to allow windows to redraw
+# v1.3 changed long wait for window to close to cope with running a DDR on a live file over t'interwebs
 
 tell application "System Events"
 	tell process "FileMaker Pro Advanced"
@@ -35,10 +36,10 @@ tell application "System Events"
 			delay 0.5
 			#  Save All
 			click button 2 of window "FileMaker Pro"
-			
-			repeat until not window "FileMaker Pro" exists
+			delay 0.5
+			repeat until not window "Saving Report" exists
 				#  you need this is if the export is from slow remote files, otherwise comment out
-				delay 0.5
+				delay 0.1
 			end repeat
 			
 		on error
