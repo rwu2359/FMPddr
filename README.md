@@ -28,7 +28,7 @@ Similarly, FMPerception will import the Summary.xml from the directory that was 
 You can then run the file directly from the Script Editor, by selecting the Service you created from inside FileMaker, the shortcut you assigned to it, or any other method of your choosing.
 
 ####version history
-    1.3 16_06_08, changed window test for runiing DDR on remote file
+    1.3 16_06_08, changed window test for running DDR on remote file
     1.2 16_05_31, minor timing tweaks
     1.1 16_05_30, initial release
 
