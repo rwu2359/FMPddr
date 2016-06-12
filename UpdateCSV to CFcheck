@@ -1,1 +1,41 @@
-# placeholder
+# v1.0 first draft
+#
+
+tell application "System Events"
+	tell process "FMPerception"
+		set frontmost to true
+		#  export CSV
+		click menu item 6 of menu 1 of menu bar item 3 of menu bar 1
+		delay 0.2
+		#  save
+		click button 1 of sheet 1 of window 1
+		delay 0.2
+		try
+			#  replace
+			click button 1 of sheet 1 of sheet 1 of window 1
+		on error
+			# was first time, move on
+		end try
+	end tell
+	tell process "FileMaker Pro Advanced"
+		set frontmost to true
+		#  Script - import
+		click menu item 4 of menu 1 of menu bar item 9 of menu bar 1
+		--delay 0.9
+		repeat until window "Open File" exists
+			delay 0.1
+		end repeat
+		set y to 1
+		repeat with this_row in row in outline 1 of scroll area 1 of splitter group 1 of splitter group 1 of group 2 of window "Open File"
+			if y = 1 then
+				#  skip because row 1 is the header and not values
+				set y to 0
+			else if value of text field 1 of UI element 1 of this_row = "Export.csv" then
+				select this_row
+				#  Open
+				click button 1 of window "Open File"
+				exit repeat
+			end if
+		end repeat
+	end tell
+end tell
