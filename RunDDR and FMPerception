@@ -1,6 +1,7 @@
 # v1.1 copes will manage three states of FMPerception. Being closed, having no windows open, and just needs refresh
 # v1.2 added wait when initially closed to allow windows to redraw
 # v1.3 changed long wait for window to close to cope with running a DDR on a live file over t'interwebs
+# v1.4 changed to point to key command to "refresh", rather than menu item index - future proofing from Dave
 
 tell application "System Events"
 	tell process "FileMaker Pro Advanced"
@@ -54,7 +55,8 @@ tell application "System Events"
 				set this_window to name of window 1
 				#  exits if there is no window open
 				#  File:Refresh
-				click menu item 5 of menu 1 of menu bar item 3 of menu bar 1
+				# _dep click menu item 5 of menu 1 of menu bar item 3 of menu bar 1
+				keystroke "r" using command down
 				set refreshed to true
 			on error
 				--
