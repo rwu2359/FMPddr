@@ -33,6 +33,7 @@ If you download and use the Custom Function Checker, http://docs.geistinteractiv
 The RunCSV will stop and ask where the export.csv file is ( by default in the same folder as the DDR ) and the updateCSV will export the csv file and then switch to FileMaker and run the import script which refreshes the analysis. 
 
 ####version history
+    1.4 16_12_19, changed to point to key command to "refresh", rather than menu item index
     1.3 16_06_08, changed window test for running DDR on remote file
     1.2 16_05_31, minor timing tweaks
     1.1 16_05_30, initial release
