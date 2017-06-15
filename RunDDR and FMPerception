@@ -2,6 +2,12 @@
 # v1.2 added wait when initially closed to allow windows to redraw
 # v1.3 changed long wait for window to close to cope with running a DDR on a live file over t'interwebs
 # v1.4 changed to point to key command to "refresh", rather than menu item index - future proofing from Dave
+# v1.5 amended XML checkbox if version is FMP16 or above, fixes #1 thanks to HansReinJacobi
+
+tell application "FileMaker Pro Advanced"
+	set vv to version
+	set fmv to text 1 thru 2 of vv as integer
+end tell
 
 tell application "System Events"
 	tell process "FileMaker Pro Advanced"
@@ -21,7 +27,12 @@ tell application "System Events"
 		end try
 		
 		#  select XML as format
-		click checkbox 3 of window "Database Design Report"
+		if fmv > 15 then
+			click radio button 2 of window "Database Design Report"
+		else
+			click checkbox 3 of window "Database Design Report"
+		end if
+		
 		set theCheckbox to checkbox "Automatically open report when done" of window "Database Design Report"
 		tell theCheckbox
 			set checkboxStatus to value of theCheckbox as boolean
