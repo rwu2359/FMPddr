@@ -1,5 +1,5 @@
 # v1.0 first draft
-# allows you to choose export.csv location
+# allows you to choose export.csv location for the import step
 
 tell application "System Events"
 	tell process "FMPerception"
