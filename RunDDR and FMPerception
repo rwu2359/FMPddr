@@ -3,11 +3,17 @@
 # v1.3 changed long wait for window to close to cope with running a DDR on a live file over t'interwebs
 # v1.4 changed to point to key command to "refresh", rather than menu item index - future proofing from Dave
 # v1.5 amended XML checkbox if version is FMP16 or above, fixes #1 thanks to HansReinJacobi
+# v1.6 amended to alter behaviour for High Sierra and also for changes in FMP17
 
 tell application "FileMaker Pro Advanced"
 	set vv to version
 	set fmv to text 1 thru 2 of vv as integer
 end tell
+
+set _vString to system version of (system info)
+considering numeric strings
+	set _newest to _vString ≥ "10.13"
+end considering
 
 tell application "System Events"
 	tell process "FileMaker Pro Advanced"
@@ -43,11 +49,19 @@ tell application "System Events"
 		click button 1 of window "Database Design Report"
 		delay 0.1
 		#  Save
-		click button 1 of window "Save Report"
+		if _newest then
+			click button 3 of window "Save Report"
+		else
+			click button 1 of window "Save Report"
+		end if
 		try
 			delay 0.5
 			#  Save All
-			click button 2 of window "FileMaker Pro"
+			if fmv > 16 then
+				click button 2 of window "FileMaker Pro Advanced"
+			else
+				click button 2 of window "FileMaker Pro"
+			end if
 			delay 0.5
 			repeat until not window "Saving Report" exists
 				#  you need this is if the export is from slow remote files, otherwise comment out
