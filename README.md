@@ -7,7 +7,7 @@ AppleScript to automate FileMaker DDR into FMPerception
     FMPerception
 
 ## Installation
-Create a new Automator Service action, with no input, pointing to FileMaker Pro Advanced
+Create a new Automator Service action, with no input, pointing to FileMaker Pro Advanced. If you have one for v16, then you will need to create a new one pointed at v17. Call it something different but then you can assign it the same shortcut as the action is linked to the executable...
 
 Select Applescript from the available actions
 
