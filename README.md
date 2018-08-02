@@ -9,7 +9,7 @@ AppleScript to automate FileMaker DDR into FMPerception
 ## Installation
 Create a new Automator Service action, with no input, pointing to FileMaker Pro Advanced. If you have one for v16, then you will need to create a new one pointed at v17. Call it something different but then you can assign it the same shortcut as the action is linked to the executable...
 
-Select Applescript from the available actions
+Select Run Applescript (NOT Execute Applescript) from the available actions
 
 Copy and paste the code from this scpt file
 
@@ -33,6 +33,7 @@ If you download and use the Custom Function Checker, http://docs.geistinteractiv
 The RunCSV will stop and ask where the export.csv file is ( by default in the same folder as the DDR ) and the updateCSV will export the csv file and then switch to FileMaker and run the import script which refreshes the analysis. 
 
 #### version history
+    1.7 18_08_02, explicit instruction to use Run Applescript (thanks to Dave Ramsey)
     1.6 18_05_15, amended for change in High Sierra, and changes in FMP17, fixes #2
     1.5 17_06_15, amended XML checkbox for FMP16 and above - fixes #1
     1.4 16_12_19, changed to point to key command to "refresh", rather than menu item index
