@@ -2,10 +2,11 @@
 # v1.2 added wait when initially closed to allow windows to redraw
 # v1.3 changed long wait for window to close to cope with running a DDR on a live file over t'interwebs
 # v1.4 changed to point to key command to "refresh", rather than menu item index - future proofing from Dave
-# v1.5 amended XML checkbox if version is FMP16 or above, fixes #1 thanks to HansReinJacobi
+# v1.5 amended XML checkbox  if version is FMP16 or above, fixes #1 thanks to HansReinJacobi
 # v1.6 amended to alter behaviour for High Sierra and also for changes in FMP17
+# v1.7 amended to alter behaviour for FM 19
 
-tell application "FileMaker Pro Advanced"
+tell application "FileMaker Pro"
 	set vv to version
 	set fmv to text 1 thru 2 of vv as integer
 end tell
@@ -16,7 +17,7 @@ considering numeric strings
 end considering
 
 tell application "System Events"
-	tell process "FileMaker Pro Advanced"
+	tell process "FileMaker Pro"
 		#  export the DDR as XML, not automatically opened
 		#  saves to last location with all files selected
 		set frontmost to true
@@ -58,7 +59,7 @@ tell application "System Events"
 			delay 0.5
 			#  Save All
 			if fmv > 16 then
-				click button 2 of window "FileMaker Pro Advanced"
+				click button 2 of window "FileMaker Pro"
 			else
 				click button 2 of window "FileMaker Pro"
 			end if
