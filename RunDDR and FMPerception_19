@@ -4,7 +4,7 @@
 # v1.4 changed to point to key command to "refresh", rather than menu item index - future proofing from Dave
 # v1.5 amended XML checkbox if version is FMP16 or above, fixes #1 thanks to HansReinJacobi
 # v1.6 amended to alter behaviour for High Sierra and also for changes in FMP17¬
-# v1.7 amended to alter behaviour for High Sierra and also for changes in FMP18+ - removed Advanced, changes to FMPerception objects
+# v1.7 amended to alter behaviour for Mojave and also for changes in FMP18+ - removed Advanced, changes to FMP/ FMPerception objects
 
 
 tell application "FileMaker Pro"
@@ -16,6 +16,7 @@ set _vString to system version of (system info)
 
 considering numeric strings
 	set _newest to _vString ≥ "10.13"
+	set _newer to _vString ≥ "10.14"
 end considering
 
 tell application "System Events"
@@ -52,7 +53,9 @@ tell application "System Events"
 		click button 1 of window "Database Design Report"
 		delay 0.1
 		#  Save
-		if _newest then
+		if _newer then
+			click button 4 of window "Save Report"
+		else if _newest then
 			click button 3 of window "Save Report"
 		else
 			click button 1 of window "Save Report"
