@@ -15,7 +15,7 @@ Copy and paste the code from this scpt file
 
 Ensure you have a file open in FileMaker, and run to test. You might need to grant Automator permission to run actions in the Security & Privacy pane.
 
-Once the action is saved, you can add a keyboard shortcut from system preferences to fire the action directly. For a demo and instructions see this video from [Todd Geist](https://vimeo.com/168720475)
+Once the action is saved, you can add a keyboard shortcut from system preferences to fire the action directly. For a demo and instructions see this video from [Todd Geist](https://vimeo.com/168720475). You might need to grant FileMaker permission in the Security & Privacy pane.
 
 ## Testing
 You can run the code from the Script Editor. Because the refresh is silent, you can see the result (boolean) of whether the refresh command was issued in the Result window.
