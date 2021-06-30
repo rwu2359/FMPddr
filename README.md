@@ -13,7 +13,7 @@ Select Run Applescript (NOT Execute Applescript) from the available actions
 
 Copy and paste the code from this scpt file
 
-Ensure you have a file open in FileMaker, and run to test
+Ensure you have a file open in FileMaker, and run to test. You might need to grant Automator permission to run actions in the Security & Privacy pane.
 
 Once the action is saved, you can add a keyboard shortcut from system preferences to fire the action directly. For a demo and instructions see this video from [Todd Geist](https://vimeo.com/168720475)
 
