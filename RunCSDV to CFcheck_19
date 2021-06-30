@@ -1,0 +1,28 @@
+# v1.0 first draft
+# v1.1 update for FMP 18+ removal of Advanced
+# allows you to choose export.csv location for the import step
+
+tell application "System Events"
+	tell process "FMPerception"
+		set frontmost to true
+		#  export CSV
+		click menu item 6 of menu 1 of menu bar item 3 of menu bar 1
+		delay 0.2
+		#  save
+		click button 2 of sheet 1 of window 1
+		delay 0.2
+		try
+			# replace
+			click button 1 of sheet 1 of sheet 1 of window 1
+		on error
+			# was first time, move on
+		end try
+	end tell
+	
+	tell process "FileMaker Pro"
+		set frontmost to true
+		#  Script - import
+		click menu item 4 of menu 1 of menu bar item 9 of menu bar 1
+		# then stop
+	end tell
+end tell
