@@ -28,7 +28,7 @@ Similarly, FMPerception will import the Summary.xml from the directory that was 
 You can then run the file directly from the Script Editor, by selecting the Service you created from inside FileMaker, the shortcut you assigned to it, or any other method of your choosing.
 
 ## Additional files
-If you download and use the Custom Function Checker, http://docs.geistinteractive.com/article/72-extending-fmperception there is AppleScript to automate the export from FMperception into the FileMaker analysis file.
+If you download and use the Custom Function Checker, https://docs.fmperception.com/article/549-extending-fmperception there is AppleScript to automate the export from FMperception into the FileMaker analysis file.
 
 The RunCSV will stop and ask where the export.csv file is ( by default in the same folder as the DDR ) and the updateCSV will export the csv file and then switch to FileMaker and run the import script which refreshes the analysis. 
 
