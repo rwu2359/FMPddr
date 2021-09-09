@@ -33,7 +33,7 @@ If you download and use the Custom Function Checker, https://docs.fmperception.c
 The RunCSV will stop and ask where the export.csv file is ( by default in the same folder as the DDR ) and the updateCSV will export the csv file and then switch to FileMaker and run the import script which refreshes the analysis. 
 
 #### version history
-    1.8 21_06_30, added new versions for FMP 19, removed reference ot Advanced and refactored some dialog automation
+    1.8 21_06_30, added new versions for FMP 19, removed reference to Advanced and refactored some dialog automation
     1.7 18_08_02, explicit instruction to use Run Applescript (thanks to Dave Ramsey)
     1.6 18_05_15, amended for change in High Sierra, and changes in FMP17, fixes #2
     1.5 17_06_15, amended XML checkbox for FMP16 and above - fixes #1
